@@ -18,3 +18,28 @@ var app = {
         completeElem.className = completeElem.className.split('hide').join('');
     }
 };
+
+$(function(){
+	
+	function loadBugs() {
+		var bugs = $('#bugs ul');
+		
+		$.ajax({
+			type: 'GET',
+			url: 'http://localhost/bapp/bugs.php?&jsoncallback=?',
+			dataType: 'JSONp',
+			timeout: 5000,
+			success: function(data) {
+				$.each(data, function(i,item){
+					bugs.append('<li>'+item.title)
+				});
+			},
+			error: function(data) {
+				bugs.append('<li>There was an error loading the bugs');
+			}
+		});
+	}
+	
+	loadBugs();
+	
+});
