@@ -30,7 +30,37 @@
 	<title>BAPP - a bug tracking app</title>
 </head>
 <body>
-   
+	<div class="page current" id="bugs">
+		<header>
+			<h1>Open bugs</h1>
+		</header>
+		
+		<ul></ul>
+	</div>
+
+	<div class="page" id="add-bug">
+		<header>
+			<h1>Add a new bug</h1>
+		</header>
+		
+		<form>
+			<label for="bug-title">Bug title</label>
+			<input type="text" id="bug-title" name="bug-title">
+
+			<label for="bug-details">Bug details</label>
+			<textarea id="bug-details" name="bug-details" cols="30" rows="10"></textarea>
+
+			<label for="bug-priority">Bug priority</label>
+			<select id="bug-priority" name="bug-priority">
+				<option value="1">Urgent</option>
+				<option value="2">High</option>
+				<option value="3">Medium</option>
+				<option value="4">Low</option>
+			</select>
+
+			<input type="submit" value="Add bug">
+		</form>
+	</div>
 
     <script src="cordova-2.0.0.js"></script>
     <script src="js/index.js"></script>
