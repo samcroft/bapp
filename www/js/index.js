@@ -40,6 +40,26 @@ $(function(){
 		});
 	}
 	
+	$('#add-bug form').submit(function(){
+		var postData = $(this).serialize();
+
+		$.ajax({
+			type: 'POST',
+			data: postData,
+			url: 'http://localhost/bapp/add-bug.php',
+			success: function(data){
+				//do your thing
+				console.log('Bug added!');
+			},
+			error: function(){
+				//do your thing
+				console.log('There was an error');
+			}
+		});
+
+		return false;
+	});
+	
 	loadBugs();
 	
 });
