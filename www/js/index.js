@@ -41,6 +41,9 @@ $(function(){
 	}
 	
 	$('#add-bug form').submit(function(){
+		var loading = $(this).find('input[type="submit"]');
+		loading.addClass('loading');
+		
 		var postData = $(this).serialize();
 
 		$.ajax({
@@ -48,11 +51,16 @@ $(function(){
 			data: postData,
 			url: 'http://localhost/bapp/add-bug.php',
 			success: function(data){
-				//do your thing
+				loadBugs();
+
+				$('#bugs').addClass('current');
+				$('#add-bug').removeClass('current');
+
+				loading.removeClass('loading');
 				console.log('Bug added!');
 			},
 			error: function(){
-				//do your thing
+				loading.removeClass('loading');
 				console.log('There was an error');
 			}
 		});
