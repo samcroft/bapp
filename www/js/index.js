@@ -68,6 +68,18 @@ $(function(){
 		return false;
 	});
 	
+	$('.button').tap(function(e){
+		var nextPage = $(e.target.hash);
+		var currentPage = $('.page.current');
+
+		if (nextPage.attr('id') != currentPage.attr('id')) {
+			nextPage.addClass('current');
+			currentPage.removeClass('current');
+		}
+
+		return false;
+	});
+	
 	loadBugs();
 	
 });
