@@ -22,7 +22,7 @@ var app = {
 $(function(){
 	
 	function loadBugs() {
-		var bugs = $('#bugs ul');
+		var bugs = $('#bugs ul').empty();
 		
 		$.ajax({
 			type: 'GET',
