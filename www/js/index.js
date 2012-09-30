@@ -19,7 +19,7 @@ var app = {
     }
 };
 
-$(function(){
+$(document).on('deviceready', function(){
 	
 	function loadBugs() {
 		var bugs = $('#bugs ul').empty();
