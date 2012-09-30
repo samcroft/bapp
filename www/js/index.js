@@ -68,7 +68,7 @@ $(function(){
 		return false;
 	});
 	
-	//change to .tap to .click for browser testing
+	//change .tap to .click for browser testing
 	$('.button').tap(function(e){
 		var nextPage = $(e.target.hash);
 		var currentPage = $('.page.current');
